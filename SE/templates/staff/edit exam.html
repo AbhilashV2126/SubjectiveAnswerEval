@@ -1,0 +1,34 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/update_exam_post">
+  <table width="200" border="1" class="table table-bordered">
+   
+    <tr>
+      <td><div align="center"><strong>Date</strong></div></td>
+      <td><label>
+        <div align="center">
+          <input type="date" name="d1" value="{{ date }}" class="form-control" required>
+          </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong>Time</strong></div></td>
+      <td><label>
+        <div align="center">
+          <input type="time" value="{{ time }}" name="t1" class="form-control" required>
+          </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><label>
+        <div align="center">
+          <input type="submit" name="EDIT" value="update"  class="btn btn-success"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

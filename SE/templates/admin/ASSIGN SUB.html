@@ -1,0 +1,37 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/assign_sub_staff">
+  <table width="259" border="1"  class="table table-bordered">
+    <tr>
+      <th width="419" scope="col">staff
+        <label>
+        <select name="select" class="form-control">
+            {% for i in val1 %}
+                <option value="{{ i.id }}">{{ i.firstname }}{{ i.lastname }}</option>
+            {% endfor %}
+        </select>
+      </label></th>
+    </tr>
+    <tr>
+      <td><strong>subject
+          <label>          </label>
+      </strong>
+        <label><select name="select2" class="form-control">
+            {% for i in val %}
+                <option value="{{ i.id }}">{{ i.subject }}</option>
+            {% endfor %}
+        </select>
+        </label></td>
+    </tr>
+  </table>
+  <p>
+    <label>
+    <input type="submit" name="Submit" value="ASSIGN" class="btn btn-primary"/>
+    </label>
+  </p>
+</form>
+</body>
+{% endblock %}

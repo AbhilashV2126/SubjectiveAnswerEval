@@ -1,0 +1,27 @@
+{% extends 'student/index_student.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/viewrslt_search">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td colspan="2">subject
+        <label>
+        <select name="select">
+             {% for i in val %}
+            <option value="{{ i.id }}">{{ i.subject }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" name="Submit" value="search" />
+      </label></td>
+    </tr>
+    <tr>
+      <td width="419">Score</td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;{{ t }}</td>
+    </tr>
+
+  </table>
+</form>
+{% endblock %}

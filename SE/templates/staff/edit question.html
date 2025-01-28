@@ -1,0 +1,29 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/edit_question">
+  <table width="200" border="1" class="table table-bordered">
+      <tr>
+          <th scope="row">Subject
+        <label>
+       <select name="select">
+           {% for i in val %}
+           <option value="{{ i.id }}">{{ i.SUBJECT.subject }}</option>
+           {% endfor %}
+       </select>
+      </label></th>
+      </tr>
+
+    <tr>
+      <th scope="row">questions
+        <label>
+        <input type="text" name="textfield" value="{{ v.question }}" />
+      </label></th>
+    </tr>
+
+  </table>
+  <label>
+  <input type="submit" name="Submit" value="EDIT" />
+  </label>
+</form>
+{% endblock %}

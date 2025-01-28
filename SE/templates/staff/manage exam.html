@@ -1,0 +1,40 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="300" border="1"  class="table table-boredered">
+    <tr>
+      <td colspan="4">Exam
+        <label>
+        <input type="text" class="form-control" name="textfield" required pattern="[A-Z a-z.]{3,25}"/>
+      </label>
+      <label>
+      <input type="submit" name="Submit" value="Search" class="btn "/>
+      </label></td>
+    </tr>
+  </table>
+    <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td >Subject  </td>
+      <td>Time</td>
+      <td >Date</td>
+      <td>&nbsp;</td>
+      <td></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.subject.SUBJECT.subject }}</td>
+      <td>&nbsp;{{ i.time }}</td>
+      <td>&nbsp{{ i.date }}</td>
+      <td><a href="editexam/{{ i.id }}" class="btn btn-info">Edit</a></td><td><a href="delete_exam_post/{{ i.id }}" class="btn btn-danger">Delete</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="4"><div align="center" ><a href="add_exm" class="btn btn-primary">Add</a></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

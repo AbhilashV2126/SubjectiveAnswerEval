@@ -1,0 +1,33 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form action="add_prv_qus" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1" class="table table-bordered">
+      <tr>
+          <th scope="row">Subject
+        <label>
+       <select name="select">
+           {% for i in val %}
+           <option value="{{ i.id }}">{{ i.SUBJECT.subject }}</option>
+           {% endfor %}
+       </select>
+      </label></th>
+      </tr>
+
+    <tr>
+      <th scope="row">questions
+        <label>
+        <input type="file" name="textfield" required pattern="[A-Z a-z.]{1,100}" />
+      </label></th>
+    </tr>
+    <tr>
+      <th scope="row"><label>Year
+        <input type="text" name="textfield2" />
+      </label></th>
+    </tr>
+  </table>
+  <label>
+  <input type="submit" name="Submit" value="ADD" />
+  </label>
+</form>
+{% endblock %}

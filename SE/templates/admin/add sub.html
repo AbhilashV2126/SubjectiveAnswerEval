@@ -1,0 +1,52 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form4" name="form4" method="post" action="/addsubcode">
+  <label> <br />
+  </label>
+  <table width="251" border="1"  class="table table-bordered">
+    <tr>
+      <th width="229" scope="col"> <label>course
+        <select name="select" class="form-control" >
+            {% for i in val  %}
+            <option value="{{ i.id }}">{{ i.course }}</option>
+            {% endfor %}
+            </select>
+        </label>
+          <label></label>
+          <label></label>      </th>
+    </tr>
+    <tr>
+      <td><p><strong>subject
+            <label>            </label>
+      </strong>
+        <label>
+        <input type="text" class="form-control" name="textfield" required pattern="[A-Z a-z.]{3,25}"/>
+        </label>
+      </p>
+      <p> <strong>sem</strong> 
+        <label>
+        <select name="select2" class="form-control" >
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+        </select>
+        </label>
+      </p></td>
+    </tr>
+  </table>
+  <label><br />
+  <input type="submit" name="Submit3" value="ADD" />
+  </label>
+  <p>&nbsp;</p>
+</form>
+<p>&nbsp;</p>
+</body>
+{% endblock %}

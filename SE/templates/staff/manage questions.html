@@ -1,0 +1,49 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/search_qus#about">
+  <table width="233" border="1" class="table table-bordered">
+    <tr>
+      <th width="67" scope="col">Exam</th>
+      <th width="70" scope="col"><label>
+        <select name="select" class="form-control">
+            {% for i in exam %}
+            <option value="{{ i.id }}">{{ i.subject.SUBJECT.subject }}</option>
+            {% endfor %}
+        </select>
+      </label></th>
+      <th width="70" scope="col"><label>
+        <input type="number" name="mark" class="form-control">
+          
+      </label></th>
+      <th width="74" scope="col"><label>
+        <input type="submit" name="Submit" value="search" class="btn btn-primary" />
+      </label></th>
+    </tr>
+  </table>
+<br>
+<br>
+  <table width="233" border="1" class="table table-bordered">
+    <tr>
+      <td><strong>Question</strong></td>
+     <td><strong>mark</strong></td>
+      <td>&nbsp;</td>
+        <td></td>
+        <td></td>
+    </tr>
+  {% for i in sub %}
+    <tr>
+      <td>{{ i.question }}</td>
+      <td>{{ i.mark }}</td>
+      <td><a href="/editqs/{{ i.id }}" class="btn btn-primary">Edit</a></td><td>
+        <a href="/mng_qus_delete/{{ i.id }}" class="btn btn-danger">Delete</a></td>
+      <td><a href="/mng_anskey/{{ i.id }}" class="btn btn-primary">Answer key</a>
+      </td>
+    </tr>
+  {% endfor %}
+    <tr>
+      <td colspan="8"><a href="add_q" class="btn btn-primary">Add Qstns</a>
+    </tr>
+  </table>
+</form>
+{% endblock %}

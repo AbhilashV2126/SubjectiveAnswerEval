@@ -1,0 +1,67 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/addstaffcode" enctype="multipart/form-data">
+  <table width="289" border="1"  class="table table-bordered">
+    <tr>
+      <td width="122">first name </td>
+      <td width="151"><label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>last name </td>
+      <td><input type="text" name="textfield2" required pattern="[A-Z a-z.]{3,25}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>gender</td>
+      <td><label>
+        <input type="radio" name="radio" value="male" />
+      male</label>
+        <label>
+        <input type="radio" name="radio" value="female" />
+      female</label></td>
+    </tr>
+    <tr>
+      <td>qualification</td>
+      <td><input type="text" name="textfield3" required pattern="[A-Z a-z.]{3,25}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>experience</td>
+      <td><input type="text" name="textfield4" required pattern="[0-9]" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td><input type="text" name="textfield5" required pattern="[6789][0-9]{9}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td><input type="email" name="textfield6" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>place</td>
+      <td><input type="text" name="textfield7" required pattern="[A-Z a-z.]{3,25}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td><input type="file" name="f" required class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>username</td>
+      <td><input type="text" name="textfield8" required class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td><input type="text" name="textfield9" required class="form-control"/></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><label>
+         <input type="submit" name="add" value="Submit" class="btn btn-primary"/>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

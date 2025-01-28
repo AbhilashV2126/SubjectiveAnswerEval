@@ -1,0 +1,25 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post">
+  <table  class="table table-bordered">
+
+
+    <tr>
+      <th scope="row">Questions Key
+      </th>
+        <td>
+        <label>
+{#        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" />#}
+            <textarea name="textfield" required pattern="[A-Z a-z.]{3,25}" class="form-control"></textarea>
+      </label></td>
+    </tr>
+ <tr>
+<td colspan="2" align="center">  <label>
+  <input type="submit" name="Submit" value="ADD" class="btn btn-primary"/>
+  </label>
+  </td>
+ </tr>
+  </table>
+</form>
+{% endblock %}

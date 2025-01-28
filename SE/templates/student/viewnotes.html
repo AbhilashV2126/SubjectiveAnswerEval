@@ -1,0 +1,35 @@
+{% extends 'student/index_student.html' %}
+{% block body %}
+
+<form action="/srch_note_std" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td width="107">Subject</td>
+      <td width="77"><label>
+        <select name="select">
+            {% for i in val %}
+            <option value="{{ i.id }}" {% if i.id == sid %} selected {% endif %}>{{ i.subject }}</option>
+            {% endfor %}
+        </select>
+      </label></td>
+      <td width="77"><label>
+        <input type="submit" name="Submit2" value="Search" />
+      </label></td>
+    </tr>
+  </table>
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>subject</td>
+      <td>notes</td>
+      <td><label>date</label></td>
+    </tr>
+  {% for i in val1 %}
+    <tr>
+      <td>{{ i.SUBJECT.subject }}</td>
+      <td><a href="{{ i.NOTES.url }}" download>Download</a></td>
+      <td>{{ i.DATE }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+</form>
+{% endblock %}

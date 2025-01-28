@@ -1,0 +1,30 @@
+{% extends 'student/index_student.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/scvr_post">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td colspan="3">complaint
+        <label>
+        <input type="text" name="textfield" />
+        <br />
+        <br />
+        <input type="submit" name="Submit" value="SEND" />
+      </label></td>
+    </tr>
+
+    <tr>
+      <td width="58">complaint</td>
+      <td width="151">date</td>
+      <td width="151">reply</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ i.complaint }}</td>
+      <td>{{ i.date }}</td>
+      <td>{{ i.reply }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  {% csrf_token %}
+  <table width="200" border="1" class="table table-bordered">
+    <!-- Dropdown for subjects -->
+    <tr>
+      <td colspan="2"><strong>
+        <select name="select" class="form-control">
+          {% for subject in val %}
+            <option value="{{ subject.id }}">{{ subject.subject }}</option>
+          {% endfor %}
+        </select>
+        <label></label>
+        <label>
+        <input type="submit" name="Submit" value="Search" class="btn btn-primary" />
+        </label>
+      </strong></td>
+    </tr>
+
+    <!-- Table headers -->
+    <tr>
+      <td><strong>Student</strong></td>
+      <td><strong>Score</strong></td>
+    </tr>
+
+    <!-- Display results -->
+    {% if t %}
+      {% for exam_id, score in t.items %}
+        <tr>
+          <td>{{ exam_id.subject.SUBJECT.course.firstname }} {{ exam_id.subject.SUBJECT.course.Lname }}</td>
+          <td>{{ score }}</td>
+        </tr>
+      {% endfor %}
+    {% else %}
+      <tr>
+        <td colspan="2">No results found.</td>
+      </tr>
+    {% endif %}
+  </table>
+</form>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td width="50">date</td>
+      <td colspan="2">&nbsp;</td>
+      <td width="80"><label>
+        <input type="submit" name="Submit" value="search" />
+      </label></td>
+    </tr>
+  </table>
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>subject</td>
+      <td width="52">note</td>
+      <td width="46">date</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.SUBJECT.subject }}</td>
+      <td>{{ i.NOTES }}</td>
+      <td>{{ i.DATE }}</td>
+      <td><a href="#">Download</a></td>
+      <td>&nbsp;</td>
+      <td><p><a href="edit_note/{{ i.id }}">edit</a></p>
+      <p><a href="mng_note_delete/{{ i.id }}">delete</a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="4"><a href="/staff_add_note">ADD</a></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

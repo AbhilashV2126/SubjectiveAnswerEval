@@ -1,0 +1,39 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="259" border="1"  class="table table-dark">
+    <tr>
+      <th colspan="5" scope="col">course
+        <label>
+        <select name="select">
+        </select>
+      </label></th>
+    </tr>
+    <tr>
+      <td colspan="5">semester
+        <label>
+        <select name="select2">
+        </select>
+        <input type="submit" name="Submit" value="search" />
+      </label></td>
+    </tr>
+    <tr>
+      <td width="82">name</td>
+      <td width="64">gender</td>
+      <td width="91">place</td>
+      <td width="91">phone</td>
+      <td width="91">email</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

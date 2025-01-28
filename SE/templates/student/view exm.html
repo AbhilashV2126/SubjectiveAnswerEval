@@ -1,0 +1,24 @@
+{% extends 'student/index_student.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-bordered">
+
+
+    <tr>
+      <td width="58"><strong>subject</strong></td>
+      <td width="83"><strong>date</strong></td>
+      <td width="109"><strong>time</strong></td>
+      <td width="261">&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.subject.SUBJECT.subject }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>{{ i.time }}</td>
+      <td><label><a href="/view_sample_question/{{ i.id }}#about">attend</a></label></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

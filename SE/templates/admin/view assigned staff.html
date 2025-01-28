@@ -1,0 +1,30 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/assignsub#about">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>staff</td>
+      <td>subject</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.STAFF.firstname }} {{ i.STAFF.lastname }}</td>
+      <td>&nbsp;{{ i.SUBJECT.subject }}</td>
+      <td><a href="assign_sub_delete/{{ i.id }}" class="btn btn-danger">delete</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="3"><label> 
+        <div align="center">
+          <input name="add new" type="submit" id="add new" value="add new" class="btn btn-primary"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+  <a href=""></a>
+</form>
+</body>
+{% endblock %}

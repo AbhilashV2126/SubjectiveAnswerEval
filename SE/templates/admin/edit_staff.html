@@ -1,0 +1,55 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/edit_staf#about">
+  <table width="289" border="1"  class="table table-bordered">
+    <tr>
+      <td width="122">First Name </td>
+      <td width="151"><label>
+        <input type="text" name="textfield" class="form-control" value="{{ data.firstname }}" required pattern="[A-Z a-z.]{3,25}" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Last Name </td>
+      <td><input type="text" name="textfield2" class="form-control" value="{{ data.lastname }}" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><label>
+        <input type="radio" name="radio" value="male" {% if data.gender == 'male' %} checked {% endif %}/>
+      Male</label>
+        <label>
+        <input type="radio" name="radio" value="female"  {% if data.gender == 'female' %} checked {% endif %}/>
+      Female</label></td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><input type="text" name="textfield3" class="form-control" value="{{ data.qualification }}" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>Experience</td>
+      <td><input type="text" name="textfield4" class="form-control" value="{{ data.experience }}" required pattern="[A-Z a-z.0-9]{1,25}"/></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><input type="text" name="textfield5" class="form-control" value="{{ data.phone }}" required pattern="[6789][0-9]{9}"/></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" name="textfield6" class="form-control" value="{{ data.email }}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><input type="text" name="textfield7" class="form-control" value="{{ data.place }}" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+
+      <td colspan="2"><div align="center">
+         <input type="submit" name="add" value="Update" class="btn btn-primary"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

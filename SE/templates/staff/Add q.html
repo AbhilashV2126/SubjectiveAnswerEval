@@ -1,0 +1,47 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="add_question">
+  <table class="table table-bordered">
+    <tr>
+      <th scope="row">Subject</th>
+      <td>
+        <label>
+          <select name="select" class="form-control" required>
+            {% for i in val %}
+              <option value="{{ i.id }}">{{ i.date }}-----{{ i.subject.SUBJECT.subject }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Question</th>
+      <td>
+        <label>
+          <textarea name="textfield" required pattern="[A-Z a-z.]{3,25}" class="form-control"></textarea>
+        </label>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Mark</th>
+      <td>
+        <label>
+          <input type="number" name="mark" min="1" max="100" required class="form-control" />
+        </label>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" align="center">
+        <label>
+          <input type="submit" name="Submit" value="ADD" class="btn btn-primary" />
+        </label>
+      </td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

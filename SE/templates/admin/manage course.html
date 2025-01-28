@@ -1,0 +1,42 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="view_crs_search">
+  <table width="253" border="1"  class="table table-bordered">
+    <tr>
+      <td colspan="3" scope="col"><label>
+        <input type="text" name="textfield" pattern="[A-Z a-z.]{3,25}" class="form-control"/>
+        <input type="submit" name="Submit" value="search" class="btn btn-primary" />
+      </label></td>
+    </tr>
+    <tr>
+      <td><strong>course</strong></td>
+      <td><strong>description</strong></td>
+      <td>&nbsp;</td>
+         <td>&nbsp;</td>
+    </tr>
+{% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.course }}</td>
+      <td>&nbsp;{{ i.description }}</td>
+        <td><a href="mng_crs_delete/{{ i.id }}" class="btn btn-danger">delete</a><br></td>
+        <td>
+      <a href="/mng_crs_edit/{{ i.id }}" class="btn btn-primary">Edit</a></td>
+    </tr>
+{% endfor %}
+    <tr>
+      <td colspan="3"><div align="center">
+          <a href="add_crs" class="btn btn-primary">Add new
+
+      </a>
+      </div></td>
+    </tr>
+  </table>
+  <p>
+    <label></label>
+  </p>
+</form>
+</body>
+{% endblock %}

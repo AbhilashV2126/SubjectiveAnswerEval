@@ -1,0 +1,65 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form4" name="form4" method="post" action="search_sub#about">
+<label><br />
+  <a href="/add_sub" class="btn btn-primary">Add</a>
+  </label>
+  <p>&nbsp;</p>
+  <label> search<br />
+
+  </label>
+
+  <table  border="1"  class="table table-bordered">
+    <tr>
+      <th colspan="5" scope="col"> <label>course
+        <select name="select" required class="form-control" >
+            <option value="">Select</option>
+            {% for i in obc %}
+                <option value="{{ i.id }}">{{ i.course }}</option>
+            {% endfor %}
+            </select>
+        </label>
+
+          <label>semester
+            <select name="select2" required class="form-control">
+                <option value="">Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+          </select>
+          </label> <label>
+          <input type="submit" name="Submit2" value="search" class="btn btn-primary"/>
+          </label>
+      </th>
+    </tr>
+    <tr>
+      <td >subject </td>
+      <td >&nbsp;course</td>
+      <td>sem </td>
+      <td >&nbsp;</td>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.subject}}</td>
+      <td>{{i.COURSE.course}}</td>
+      <td>{{i.Sem}}</td>
+      <td><a href="mng_sub_delete/{{ i.id }}" class="btn btn-danger">delete</a>
+      </td>
+    </tr>
+      {% endfor %}
+  </table>
+
+</form>
+<p>&nbsp;</p>
+</body>
+{% endblock %}
+

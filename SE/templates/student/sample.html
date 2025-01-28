@@ -1,0 +1,95 @@
+{% extends 'student/index_student.html' %}
+{% block body %}
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+{#<script>#}
+{#    var mins={{tt}};#}
+{##}
+{#    var secs={{secs}};#}
+{#    function countdown() {#}
+{#        setTimeout('Decrement()',60);#}
+{#    }#}
+{#    function Decrement() {#}
+{#        if(document.getElementById) {#}
+{#            minutes=document.getElementById("minutes");#}
+{#            timeee=document.getElementById("tt");#}
+{#            secstxt=document.getElementById("secs");#}
+{#            seconds=document.getElementById("seconds");#}
+{#            if(seconds<59) {#}
+{#                seconds.value=secs;#}
+{#            }#}
+{#            else {#}
+{#                minutes.value=getminutes();#}
+{#                seconds.value=getseconds();#}
+{#            }#}
+{#            if(mins<1) {#}
+{#                minutes.style.color="red";#}
+{#                seconds.style.color="red";#}
+{#            }#}
+{#            if(mins<0) {#}
+{#                alert('time up');window.location='http://127.0.0.1:5000/studenthome'#}
+{#                minutes.value=0;#}
+{#                seconds.value=0;#}
+{#            }#}
+{#            else {#}
+{#                secs--;#}
+{#                timeee.value=getminutes();#}
+{#                secstxt.value=secs;#}
+{##}
+{#                setTimeout('Decrement()',1000);#}
+{#            }#}
+{#        }#}
+{#    }#}
+{##}
+{#    function getminutes() {#}
+{#        mins=Math.floor(secs/60);#}
+{##}
+{#        return mins;#}
+{#    }#}
+{##}
+{#    function getseconds() {#}
+{#        return secs-Math.round(mins*60);#}
+{#    }#}
+{#</script>#}
+
+<body onload="countdown();">
+
+<form action="/finishexm#about" method="post" enctype="multipart/form-data">
+  <table width="200" border="1" class="table table-bordered">
+  <tr>
+      <td align="center"><b>QUESTION  :</b></td>
+      <th><textarea rows="5" cols="45" disabled>{{ data.question }} </textarea></th>
+  </tr>
+  <tr>
+      <td align="center"> <b>ANSWER  :</b></td>
+   <td> <textarea rows="5" cols="45"  name="ans"> </textarea>
+
+       <textarea rows="5" cols="45"  name="rans" hidden>{{ data.question }}</textarea>
+       <textarea rows="5" cols="45"  name="mark" hidden>{{ data.mark }}</textarea>
+       <textarea rows="5" cols="45"  name="tid" hidden>{{ data.id }}</textarea>
+
+   </td>
+
+  </tr>
+    <tr>
+        <td colspan="2"> <input type="submit" value="next" name="btn"></td>
+{#         <input type="submit" name="btn" {% if cnt < ln|add:1 %} value="NEXT" class="btn btn-info btn-sm" {% else %} value="FINISH" {% endif %} class="btn btn-success btn-sm"/>#}
+    </tr>
+    <tr>
+        <td colspan="2"> <input type="submit" value="back" name="btn"></td>
+    </tr>
+
+
+</table>
+</form>
+</body>
+
+
+{% endblock %}
+
+
+

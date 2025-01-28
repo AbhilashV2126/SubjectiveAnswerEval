@@ -1,0 +1,65 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="search_std">
+  <table width="271" border="1" class="table table-bordered">
+    <tr>
+      <th  scope="col">course
+      </th>
+    <th>
+
+        <select name="select" class="form-control">
+            {% for i in val %}
+            <option value="{{ i.id }}">{{ i.course }}</option>
+            {% endfor %}
+        </select>
+</th>
+    <td>
+  sem
+
+    </td>
+    <td>
+        <label>
+        <select name="select2" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+        </select>
+        </label>
+      </td>
+        <td >
+            <input type="submit" value="search" class="btn btn-primary">
+        </td>
+    </tr>
+  </table>
+<br>
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td >name </td>
+        <td>Photo</td>
+      <td>gender</td>
+      <td >place</td>
+      <td >phone</td>
+      <td >email</td>
+      <td >&nbsp;</td>
+    </tr>
+  {% for i in val1 %}
+    <tr>
+      <td>{{ i.firstname }} {{ i.Lname }}</td>
+      <td>&nbsp;<img src="/media/{{ i.image }}" width="100px" height="100px"/> </td>
+     <td>&nbsp;{{ i.gender }}</td>
+      <td>{{ i.place }}</td>
+      <td>{{ i.phone }}</td>
+      <td>&nbsp;{{ i.email }}</td>
+      <td>{% if i.LOGIN.type == "pending" %}<p><a href="acpt_std/{{ i.LOGIN.id }}" class="btn btn-primary">accept</a></p>
+      <p><a href="rjt_std/{{ i.LOGIN.id }}" class="btn btn-danger">reject</a></p>{% else %} {{ i.LOGIN.type }} {% endif %}</td>
+    </tr>
+  {% endfor %}
+  </table>
+</form>
+{% endblock %}

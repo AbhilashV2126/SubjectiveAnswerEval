@@ -1,0 +1,26 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <th colspan="3" scope="col"><label>
+        <div align="right">staff
+          <select name="select">
+          </select>
+          <input type="submit" name="Submit" value="search" />
+          </div>
+      </label></th>
+    </tr>
+    <tr>
+      <td width="44"><strong>user</strong></td>
+      <td width="66">Feedback</td>
+      <td width="102">date</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

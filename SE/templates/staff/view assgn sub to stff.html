@@ -1,0 +1,28 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form id="form4" name="form4" method="post" action="">
+  <label> </label>
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <th height="25" scope="col">staff</th>
+      <th scope="col">subject</th>
+
+    </tr>
+      {% for i in ob %}
+    <tr>
+      <td>{{ i.STAFF }}</td>
+      <td>&nbsp;{{ i.SUBJECT.subject }}</td>
+
+    </tr>
+      {% endfor %}
+  </table>
+  <label><br />
+  </label>
+  <label>
+  <input type="submit" name="Submit3" value="ASSIGN" />
+  </label>
+  <p>&nbsp;</p>
+</form>
+<p>&nbsp;</p>
+{% endblock %}

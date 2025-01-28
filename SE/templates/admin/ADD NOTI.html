@@ -1,0 +1,22 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"  class="table table-bordered">
+    <tr>
+      <th scope="col">notifications
+        <label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" class="form-control"/>
+        <br />
+      </label></th>
+    </tr>
+  </table>
+  <label>
+  <input type="submit" name="Submit" value="SEND" class="btn btn-primary"/>
+  </label>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

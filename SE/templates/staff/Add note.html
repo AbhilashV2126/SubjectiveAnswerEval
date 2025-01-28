@@ -1,0 +1,29 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form action="/mang_notes_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td width="107">Subject</td>
+      <td width="77"><label>
+        <select name="select" class="form-control">
+            {% for i in subj %}
+            <option value="{{ i.SUBJECT.id }}">{{ i.SUBJECT.subject }}</option>
+            {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Note</td>
+      <td><label>
+        <input type="file" name="file" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <input type="submit" name="Submit" value="ADD" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

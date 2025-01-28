@@ -1,0 +1,39 @@
+{% extends 'staff/newstaffindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/srch_prv_qs">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td width="50">Date</td>
+      <td colspan="2"><label>
+        <input type="text" name="textfield" class="form-control"/>
+      </label></td>
+      <td width="80"><label>
+        <input type="submit" name="Submit" value="search" class="btn btn-primary"/>
+      </label></td>
+    </tr>
+  </table>
+  <br>
+  <table  border="1" class="table table-bordered">
+    <tr>
+      <td>subject</td>
+      <td width="52">questions</td>
+      <td width="46">year</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in sub %}
+    <tr>
+      <td>{{ i.assign_sub.SUBJECT.subject }}</td>
+      <td>{{ i.question }}</td>
+      <td>{{ i.year }}</td>
+
+      <td><p><a href="edit_prv_qs/{{ i.id }}" class="btn btn-primary">edit</a></p>
+      <p><a href="pq_delete/{{ i.id }}" class="btn btn-danger">delete</a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="4"><a href="add_prev_qstn" class="btn btn-danger">ADD</a></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
